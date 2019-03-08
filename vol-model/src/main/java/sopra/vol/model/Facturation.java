@@ -4,11 +4,27 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.persistence.Version;
+@Entity
+@Table(name ="facturation")
+
 public class Facturation {
+	
+	@Id
+	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
 	private String numeroFacturation;
 	private ModeDePaiement modeDePaiement;
 	private Date dateFacture;
+	@OneToMany (mappedBy = "facturation")
 	private List<Reservation> reservations = new ArrayList<>();
 
 	public Facturation() {
@@ -62,4 +78,13 @@ public class Facturation {
 		this.reservations = reservations;
 	}
 
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+	
+	
 }

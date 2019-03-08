@@ -3,18 +3,26 @@ package sopra.formation;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import sopra.formation.dao.jpa.AeroportDaoJpa;
+import sopra.formation.dao.jpa.CompagnieAerienneDaoJpa;
 import sopra.formation.dao.IAeroportDao;
 import sopra.formation.dao.ICompagnieAerienneDao;
 import sopra.formation.dao.ICompagnieAerienneVolDao;
 import sopra.formation.dao.IEscaleDao;
 import sopra.formation.dao.IVilleDao;
 import sopra.formation.dao.IVolDao;
-import sopra.formation.dao.jpa.AeroportDaoJpa;
-import sopra.formation.dao.jpa.CompagnieAerienneDaoJpa;
 import sopra.formation.dao.jpa.CompagnieAerienneVolDaoJpa;
 import sopra.formation.dao.jpa.EscaleDaoJpa;
 import sopra.formation.dao.jpa.VilleDaoJpa;
 import sopra.formation.dao.jpa.VolDaoJpa;
+import sopra.formation.dao.IClientDao;
+import sopra.formation.dao.IFacturationDao;
+import sopra.formation.dao.IPassagerDao;
+import sopra.formation.dao.IReservationDao;
+import sopra.formation.dao.jpa.ClientDaoJpa;
+import sopra.formation.dao.jpa.FacturationDaoJpa;
+import sopra.formation.dao.jpa.PassagerDaoJpa;
+import sopra.formation.dao.jpa.ReservationDaoJpa;
 
 
 public class Application {

@@ -2,15 +2,40 @@ package sopra.vol.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.persistence.Version;
+
+@Entity
+@Table(name ="reservation")
+
 public class Reservation {
+	@Id
+	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
 	private String numeroReservation;
 	private boolean annulation;
 	private boolean paiement;
+	@Transient
 	private Date dateReservation;
+	@ManyToOne
+	@JoinColumn (name ="client_id")
 	private Client client;
+	@ManyToOne
+	@JoinColumn(name ="passager_id")
 	private Passager passager;
+	@ManyToOne
+	@JoinColumn (name = "facturation_id")
 	private Facturation facturation;
+	@ManyToOne 
+	@JoinColumn ( name  ="vol_id")
 	private Vol vol;
 
 	public Reservation() {
@@ -97,4 +122,13 @@ public class Reservation {
 		this.vol = vol;
 	}
 
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	
 }

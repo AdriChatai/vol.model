@@ -1,9 +1,17 @@
 package sopra.vol.model;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+	@Embeddable
 public class Adresse {
+	@Column(name="rue", length = 100)
 	private String rue;
+	@Column(name="codePostal", length = 100)
 	private String codePostal;
+	@Column(name="ville", length = 100)
 	private String ville;
+	@Column(name="pays", length = 100)
 	private String pays;
 
 	public Adresse() {
