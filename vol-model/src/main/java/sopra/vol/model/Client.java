@@ -21,7 +21,7 @@ public abstract class Client {
 	private Long id;
 	private String nom;
 	@Embedded
-	private Adresse adressse;
+	private Adresse adresse;
 	@OneToMany (mappedBy = "client")
 	private List<Reservation> reservations = new ArrayList<>();
 	@Version
@@ -53,11 +53,11 @@ public abstract class Client {
 	}
 
 	public Adresse getAdressse() {
-		return adressse;
+		return adresse;
 	}
 
-	public void setAdressse(Adresse adressse) {
-		this.adressse = adressse;
+	public void setAdresse(Adresse adressse) {
+		this.adresse = adressse;
 	}
 
 	public List<Reservation> getReservations() {

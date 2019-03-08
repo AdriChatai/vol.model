@@ -1,8 +1,27 @@
 package sopra.vol.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Version;
+
+@Entity
+@Table(name="compagnie_aerienne_vol")
 public class CompagnieAerienneVol {
+	@Id
+	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
+	@ManyToOne
+	@JoinColumn (name = "compagnie_Aerienne_id")
 	private CompagnieAerienne compagnieAerienne;
+	@ManyToOne
+	@JoinColumn (name ="vol_id")
 	private Vol vol;
 	private String numero;
 
@@ -53,6 +72,14 @@ public class CompagnieAerienneVol {
 
 	public void setNumero(String numero) {
 		this.numero = numero;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 
 }

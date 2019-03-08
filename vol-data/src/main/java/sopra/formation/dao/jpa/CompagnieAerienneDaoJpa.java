@@ -8,14 +8,14 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import sopra.formation.Application;
-import sopra.formation.dao.IVolDao;
-import sopra.vol.model.Vol;
+import sopra.formation.dao.ICompagnieAerienneDao;
+import sopra.vol.model.CompagnieAerienne;
 
-public class VolDaoJpa implements IVolDao{
-
+public class CompagnieAerienneDaoJpa implements ICompagnieAerienneDao {
+	
 	@Override
-	public List<Vol> findAll() {
-		List<Vol> liste = new ArrayList<Vol>();
+	public List<CompagnieAerienne> findAll() {
+		List<CompagnieAerienne> liste = new ArrayList<CompagnieAerienne>();
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -25,7 +25,7 @@ public class VolDaoJpa implements IVolDao{
 			tx = em.getTransaction();
 			tx.begin();
 
-			TypedQuery<Vol> query = em.createQuery("from Vol", Vol.class);
+			TypedQuery<CompagnieAerienne> query = em.createQuery("from CompagnieAerienne", CompagnieAerienne.class);
 
 			liste = query.getResultList();
 
@@ -45,8 +45,8 @@ public class VolDaoJpa implements IVolDao{
 	}
 
 	@Override
-	public Vol find(Long id) {
-		Vol obj = null;
+	public CompagnieAerienne find(Long id) {
+		CompagnieAerienne obj = null;
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -56,7 +56,7 @@ public class VolDaoJpa implements IVolDao{
 			tx = em.getTransaction();
 			tx.begin();
 
-			obj = em.find(Vol.class, id);
+			obj = em.find(CompagnieAerienne.class, id);
 
 			tx.commit();
 		} catch (Exception e) {
@@ -74,7 +74,7 @@ public class VolDaoJpa implements IVolDao{
 	}
 
 	@Override
-	public Vol save(Vol obj) {
+	public CompagnieAerienne save(CompagnieAerienne obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -101,7 +101,7 @@ public class VolDaoJpa implements IVolDao{
 	}
 
 	@Override
-	public void delete(Vol obj) {
+	public void delete(CompagnieAerienne obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
