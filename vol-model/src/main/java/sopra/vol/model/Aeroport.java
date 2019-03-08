@@ -68,6 +68,11 @@ public class Aeroport {
 	public void setVilles(List<Ville> villes) {
 		this.villes = villes;
 	}
+	
+
+	public void addVilles(Ville element) {
+		villes.add(element);
+	}
 
 	public int getVersion() {
 		return version;
