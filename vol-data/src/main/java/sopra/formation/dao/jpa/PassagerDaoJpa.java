@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
-
 import sopra.formation.Application;
 import sopra.formation.dao.IPassagerDao;
 import sopra.vol.model.Passager;
