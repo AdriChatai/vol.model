@@ -8,7 +8,7 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>sopra.vol.model.Aeroport</class>
 		<class>sopra.vol.model.Client</class>
-		<class>sopra.vol.model.ClientEntrepise</class>
+		<class>sopra.vol.model.ClientEntreprise</class>
 		<class>sopra.vol.model.ClientParticulier</class>
 		<class>sopra.vol.model.CompagnieAerienne</class>
 		<class>sopra.vol.model.CompagnieAerienneVol</class>

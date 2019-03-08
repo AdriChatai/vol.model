@@ -9,6 +9,6 @@ import sopra.vol.model.ClientParticulier;
 
 public interface IClientDao extends IDao<Client, Long>{
 
-	public List<ClientEntreprise> findAllClientEntreprise();
-	public List<ClientParticulier> findAllClientParticulier();
+	List<ClientEntreprise> findAllClientEntreprise();
+	List<ClientParticulier> findAllClientParticulier();
 }

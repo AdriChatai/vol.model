@@ -4,18 +4,14 @@ import java.util.Date;
 
 import sopra.formation.Application;
 import sopra.formation.dao.IClientDao;
-
 import sopra.formation.dao.IFacturationDao;
 import sopra.formation.dao.IPassagerDao;
 import sopra.formation.dao.IReservationDao;
-
 import sopra.vol.model.Adresse;
 import sopra.vol.model.Civilite;
+import sopra.vol.model.ClientEntreprise;
 import sopra.vol.model.ClientParticulier;
-import sopra.vol.model.Facturation;
-import sopra.vol.model.ModeDePaiement;
-import sopra.vol.model.Passager;
-import sopra.vol.model.Reservation;
+import sopra.vol.model.StatutJuridique;
 
 
 public class volTest {
@@ -30,79 +26,79 @@ public class volTest {
 		
 		// creation un client : 
  		
+//				IClient clientDao = ApplicationTpVol.getInstance().getClientDao();         
+//
+//				ClientParticulier julien = new ClientParticulier("julien"," M.", "198585", "manem");
+//				
+//				julien.setAdresse(new Adresse("rue de la paie", "33000", "bordeaux", "france"));
+//				
+//				clientDao.create(julien);
+				
 
-				        
+				// creation deux reservations :
 
-				ClientParticulier julien = new ClientParticulier("man", "julien", Civilite.M);
+				IClientDao clientDao = Application.getInstance().getClientDao();         
+
+				ClientParticulier julien = new ClientParticulier("manesdm","julien",Civilite.M);
 				
 				julien.setAdresse(new Adresse("rue de la paie", "33000", "bordeaux", "france"));
 				
 				julien = (ClientParticulier) client.save(julien);
 				
 
-			
+				ClientEntreprise sopra = new ClientEntreprise("sopra","12151",StatutJuridique.SA,"454");
+				clientDao.save(sopra);
+//				// creation deux reservations :
 
-	
-
-//				creation deux reservations :
+//				
+//				IReservation reservationDao1 = ApplicationTpVol.getInstance().getReservationDao();
+//			
+//				Reservation reserv1 = new Reservation(false, true, new Date());
+//				
+//				reserv1.setClient(julien);
+//				
+//				reservationDao1.create(reserv1);
+//				
+//				
+//				IReservation reservationDao2 = ApplicationTpVol.getInstance().getReservationDao();
+//				
+//				Reservation reserv2 = new Reservation(false, true, new Date());
+//				
+//				reserv2.setClient(julien);
+//				
+//				reservationDao2.create(reserv2);
 
 				
 				
 			
 				Date dt =new Date();
 				
-				Reservation reserv1 = new Reservation("test", false, true, dt);
-				
-				reserv1.setClient(julien);
-				
-				reserv1 = reservation.save(reserv1);
-				
-				
 //				
 //				
-				IReservationDao reservationDao2 = Application.getInstance().getReservationDao();
+//		 	// creation deux factures :
+//				
+//				IFacturation factureDao1 = ApplicationTpVol.getInstance().getFacturationDao();
+//				
+//				Facturation facture1 = new Facturation("virement", new Date());
+//				
+//				reserv1.setFacturation(facture1);
+//				
+//				factureDao1.create(facture1);
+//				
+//				
+//				IFacturation factureDao2 = ApplicationTpVol.getInstance().getFacturationDao();
+//				
+//				Facturation facture2 = new Facturation("virement", new Date());
+//			
+//				factureDao2.create(facture2);
+//				reserv2.setFacturation(facture2);
+//				reservationDao2.update(reserv2);
 				
-				Reservation reserv2 = new Reservation("num", false, true, dt);
-				
-				reserv2.setClient(julien);
-				
-				reserv2 = reservationDao2.save(reserv2);
-	
-				
-	
-				
-
-			
-//		 		 creation deux factures :
-			
-
-					
-				Facturation facture1 = new Facturation("123b", ModeDePaiement.VIREMENT, dt);
-				
-				reserv1.setFacturation(facture1);
-				
-				facture1 = facture.save(facture1);
-
-
-
+		 		// creation deux passagers :
+		 	
 //				
 //		 		 creation deux passagers :
 //		 	
-				
-				
-				
-
-				Passager pass = new Passager("Forcade", "Louis", new Date(), "BA123654");
-				
-				pass.setAdresse(new Adresse("4 rue claude Kogan", "33700", "Merignac", "France"));
-
-				pass = passager.save(pass);
-	
-
-
-
-
-
 //				IPassager passagerDao1 = ApplicationTpVol.getInstance().getPassagerDao();
 //				
 //				
