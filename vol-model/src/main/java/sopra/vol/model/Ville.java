@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.persistence.Version;
 
 @Entity
@@ -19,6 +20,7 @@ public class Ville {
 	@Version
 	private int version;
 	private String nom;
+	
 	@ManyToMany(mappedBy="villes")
 	private List<Aeroport> aeroports = new ArrayList<>();
 

@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "clientEntreprise")
+@Table(name = "client_entreprise")
 public class ClientEntreprise extends Client {
 	private String siret;
 	private StatutJuridique statutJuridique;
