@@ -55,9 +55,6 @@ public class Application {
 		return emf;
 	}
 	
-	public IAdresseDao getAdresseDao() {
-		return adresseDao;
-	}
 
 	public IAeroportDao getAeroportDao() {
 		return aeroportDao;

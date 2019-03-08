@@ -39,8 +39,7 @@ public class Vol {
 	private Aeroport arrivee;
 	@OneToMany(mappedBy="vol")
 	private List<Escale> escales = new ArrayList<>();
-	@ManyToOne
-	@JoinColumn(name="compagnie_aerienne_vol_id")
+	@OneToMany (mappedBy ="vol")
 	private List<CompagnieAerienneVol> compagnieAeriennes = new ArrayList<>();
 
 	public Vol() {

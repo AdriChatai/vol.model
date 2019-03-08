@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
@@ -20,8 +21,7 @@ public class CompagnieAerienne {
 	@Version
 	private int version;
 	private String nom;
-	@ManyToOne
-	@JoinColumn(name="compagnie_aerienne_id")
+	@OneToMany (mappedBy = "compagnieAerienne")
 	private List<CompagnieAerienneVol> vols = new ArrayList<>();
 
 	public CompagnieAerienne() {
