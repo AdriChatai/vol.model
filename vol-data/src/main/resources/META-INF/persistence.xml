@@ -5,13 +5,25 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="persistence-vol"
 		transaction-type="RESOURCE_LOCAL">
-		
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>sopra.vol.model.Aeroport</class>
+		<class>sopra.vol.model.Client</class>
+		<class>sopra.vol.model.ClientEntrepise</class>
+		<class>sopra.vol.model.ClientParticulier</class>
+		<class>sopra.vol.model.CompagnieAerienne</class>
+		<class>sopra.vol.model.CompagnieAerienneVol</class>
+		<class>sopra.vol.model.Escale</class>
+		<class>sopra.vol.model.Facturation</class>
+		<class>sopra.vol.model.Passager</class>
+		<class>sopra.vol.model.Reservation</class>
+		<class>sopra.vol.model.Ville</class>
+		<class>sopra.vol.model.Vol</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
 				value="org.postgresql.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:postgresql://localhost:5432/formation-jpa" />
+				value="jdbc:postgresql://localhost:5432/vol-jpa" />
 			<property name="javax.persistence.jdbc.user"
 				value="postgres" />
 			<property name="javax.persistence.jdbc.password"

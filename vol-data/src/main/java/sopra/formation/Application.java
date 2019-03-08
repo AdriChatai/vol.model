@@ -3,12 +3,24 @@ package sopra.formation;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import sopra.formation.dao.IAeroportDao;
+import sopra.formation.dao.ICompagnieAerienneDao;
+import sopra.formation.dao.ICompagnieAerienneVolDao;
+import sopra.formation.dao.IEscaleDao;
+import sopra.formation.dao.IVilleDao;
+import sopra.formation.dao.IVolDao;
+import sopra.formation.dao.jpa.AeroportDaoJpa;
+import sopra.formation.dao.jpa.CompagnieAerienneDaoJpa;
+import sopra.formation.dao.jpa.CompagnieAerienneVolDaoJpa;
+import sopra.formation.dao.jpa.EscaleDaoJpa;
+import sopra.formation.dao.jpa.VilleDaoJpa;
+import sopra.formation.dao.jpa.VolDaoJpa;
+
 
 public class Application {
 	private static Application instance = null;
 
 	private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence-vol");
-	private final IAdresseDao adresseDao = new AdresseDaoJpa();
 	private final IAeroportDao aeroportDao = new AeroportDaoJpa();
 	private final IClientDao clientDao = new ClientDaoJpa();
 	private final ICompagnieAerienneDao compagnieAerienneDao = new CompagnieAerienneDaoJpa();

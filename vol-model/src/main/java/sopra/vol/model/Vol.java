@@ -4,16 +4,43 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Version;
+
+@Entity
+@Table(name="vol")
 public class Vol {
+	@Id
+	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
 	private boolean ouvert;
+	@Temporal(TemporalType.DATE)
 	private Date dateDepart;
+	@Temporal(TemporalType.DATE)
 	private Date dateArrivee;
 	private Float tarif;
+	@OneToMany(mappedBy="vol")
 	private List<Reservation> reservations = new ArrayList<>();
+	@ManyToOne
+	@JoinColumn(name="aeroport_id")
 	private Aeroport depart;
+	@ManyToOne
+	@JoinColumn(name="aeroport_id")
 	private Aeroport arrivee;
+	@OneToMany(mappedBy="vol")
 	private List<Escale> escales = new ArrayList<>();
+	@ManyToOne
+	@JoinColumn(name="compagnie_aerienne_vol_id")
 	private List<CompagnieAerienneVol> compagnieAeriennes = new ArrayList<>();
 
 	public Vol() {
@@ -108,4 +135,11 @@ public class Vol {
 		this.compagnieAeriennes = compagnieAeriennes;
 	}
 
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
 }

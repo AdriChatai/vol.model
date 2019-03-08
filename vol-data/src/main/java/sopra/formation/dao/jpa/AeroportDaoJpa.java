@@ -8,14 +8,14 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import sopra.formation.Application;
-import sopra.formation.dao.IVolDao;
-import sopra.vol.model.Vol;
+import sopra.formation.dao.IAeroportDao;
+import sopra.vol.model.Aeroport;
 
-public class VolDaoJpa implements IVolDao{
+public class AeroportDaoJpa implements IAeroportDao {
 
 	@Override
-	public List<Vol> findAll() {
-		List<Vol> liste = new ArrayList<Vol>();
+	public List<Aeroport> findAll() {
+		List<Aeroport> liste = new ArrayList<Aeroport>();
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -25,7 +25,7 @@ public class VolDaoJpa implements IVolDao{
 			tx = em.getTransaction();
 			tx.begin();
 
-			TypedQuery<Vol> query = em.createQuery("from Vol", Vol.class);
+			TypedQuery<Aeroport> query = em.createQuery("from Aeroport", Aeroport.class);
 
 			liste = query.getResultList();
 
@@ -45,8 +45,8 @@ public class VolDaoJpa implements IVolDao{
 	}
 
 	@Override
-	public Vol find(Long id) {
-		Vol obj = null;
+	public Aeroport find(Long id) {
+		Aeroport obj = null;
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -56,7 +56,7 @@ public class VolDaoJpa implements IVolDao{
 			tx = em.getTransaction();
 			tx.begin();
 
-			obj = em.find(Vol.class, id);
+			obj = em.find(Aeroport.class, id);
 
 			tx.commit();
 		} catch (Exception e) {
@@ -74,7 +74,7 @@ public class VolDaoJpa implements IVolDao{
 	}
 
 	@Override
-	public Vol save(Vol obj) {
+	public Aeroport save(Aeroport obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -101,7 +101,7 @@ public class VolDaoJpa implements IVolDao{
 	}
 
 	@Override
-	public void delete(Vol obj) {
+	public void delete(Aeroport obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -125,3 +125,4 @@ public class VolDaoJpa implements IVolDao{
 		}
 	}
 }
+

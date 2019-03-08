@@ -2,11 +2,33 @@ package sopra.vol.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Version;
+
+@Entity
+@Table(name="escale")
 public class Escale {
+	@Id
+	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
+	@ManyToOne
+	@JoinColumn(name="vol_id")
 	private Vol vol;
+	@ManyToOne
+	@JoinColumn(name="aeroport_id")
 	private Aeroport aeroport;
+	@Temporal(TemporalType.DATE)
 	private Date dateArrivee;
+	@Temporal(TemporalType.DATE)
 	private Date dateDepart;
 
 	public Escale() {

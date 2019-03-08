@@ -8,14 +8,15 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import sopra.formation.Application;
-import sopra.formation.dao.IVolDao;
-import sopra.vol.model.Vol;
+import sopra.formation.dao.IEscaleDao;
+import sopra.vol.model.Escale;
 
-public class VolDaoJpa implements IVolDao{
+
+public class EscaleDaoJpa implements IEscaleDao {
 
 	@Override
-	public List<Vol> findAll() {
-		List<Vol> liste = new ArrayList<Vol>();
+	public List<Escale> findAll() {
+		List<Escale> liste = new ArrayList<Escale>();
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -25,7 +26,7 @@ public class VolDaoJpa implements IVolDao{
 			tx = em.getTransaction();
 			tx.begin();
 
-			TypedQuery<Vol> query = em.createQuery("from Vol", Vol.class);
+			TypedQuery<Escale> query = em.createQuery("from Escale", Escale.class);
 
 			liste = query.getResultList();
 
@@ -45,8 +46,8 @@ public class VolDaoJpa implements IVolDao{
 	}
 
 	@Override
-	public Vol find(Long id) {
-		Vol obj = null;
+	public Escale find(Long id) {
+		Escale obj = null;
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -56,7 +57,7 @@ public class VolDaoJpa implements IVolDao{
 			tx = em.getTransaction();
 			tx.begin();
 
-			obj = em.find(Vol.class, id);
+			obj = em.find(Escale.class, id);
 
 			tx.commit();
 		} catch (Exception e) {
@@ -74,7 +75,7 @@ public class VolDaoJpa implements IVolDao{
 	}
 
 	@Override
-	public Vol save(Vol obj) {
+	public Escale save(Escale obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -101,7 +102,7 @@ public class VolDaoJpa implements IVolDao{
 	}
 
 	@Override
-	public void delete(Vol obj) {
+	public void delete(Escale obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
