@@ -1,5 +1,10 @@
 package sopra.vol.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "clientParticulier")
 public class ClientParticulier extends Client {
 	private String prenom;
 	private Civilite civilite;
