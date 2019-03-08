@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -21,6 +23,7 @@ public class Facturation {
 	@Version
 	private int version;
 	private String numeroFacturation;
+	@Enumerated(EnumType.STRING)
 	private ModeDePaiement modeDePaiement;
 	private Date dateFacture;
 	@OneToMany (mappedBy = "facturation")

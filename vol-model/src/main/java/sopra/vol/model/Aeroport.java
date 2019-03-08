@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.persistence.Version;
 
 @Entity
@@ -22,6 +23,7 @@ public class Aeroport {
 	private int version;
 	private String code;
 	private String nom;
+	
 	@ManyToMany
 	@JoinTable(name = "aeroport_ville", joinColumns = @JoinColumn(name="ville_id",referencedColumnName="id"), 
 	inverseJoinColumns=@JoinColumn(name="aeroport_id",referencedColumnName="id"))
