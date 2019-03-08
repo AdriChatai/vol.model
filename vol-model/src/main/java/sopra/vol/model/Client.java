@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 import javax.persistence.Version;
 
@@ -21,7 +22,7 @@ public abstract class Client {
 	private String nom;
 	@Embedded
 	private Adresse adressse;
-	@Transient
+	@OneToMany (mappedBy = "client")
 	private List<Reservation> reservations = new ArrayList<>();
 	@Version
 	private int version;

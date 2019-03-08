@@ -25,14 +25,17 @@ public class Reservation {
 	private boolean paiement;
 	@Transient
 	private Date dateReservation;
-	@Transient
+	@ManyToOne
+	@JoinColumn (name ="client_id")
 	private Client client;
-	@Transient
+	@ManyToOne
+	@JoinColumn(name ="passager_id")
 	private Passager passager;
 	@ManyToOne
 	@JoinColumn (name = "facturation_id")
 	private Facturation facturation;
-	@Transient
+	@ManyToOne 
+	@JoinColumn ( name  ="vol_id")
 	private Vol vol;
 
 	public Reservation() {

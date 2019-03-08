@@ -9,6 +9,7 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -34,7 +35,8 @@ public class Passager {
 	private String numeroPasseport;
 	@Embedded
 	private Adresse adresse;
-	@Transient
+	@OneToMany (mappedBy = "passager")
+	
 	private List<Reservation> reservations = new ArrayList<>();
 
 	public Passager() {
