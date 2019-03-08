@@ -4,13 +4,37 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+import javax.persistence.Version;
+
+@Entity
+@Table (name = "passager")
 public class Passager {
+	@Id
+	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
+	@Column(name="nom", length = 100)
 	private String nom;
+	@Column(name="prenom",length = 100)
 	private String prenom;
+	@Column(name = "dateNaissance")
+	@Temporal(TemporalType.DATE)
 	private Date dateNaissance;
+	@Column(name="numeroPasseport")
 	private String numeroPasseport;
+	@Embedded
 	private Adresse adresse;
+	@Transient
 	private List<Reservation> reservations = new ArrayList<>();
 
 	public Passager() {
