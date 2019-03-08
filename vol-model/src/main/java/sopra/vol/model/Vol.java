@@ -32,10 +32,10 @@ public class Vol {
 	@OneToMany(mappedBy="vol")
 	private List<Reservation> reservations = new ArrayList<>();
 	@ManyToOne
-	@JoinColumn(name="aeroport_id")
+	@JoinColumn(name="aeroport_depart_id")
 	private Aeroport depart;
 	@ManyToOne
-	@JoinColumn(name="aeroport_id")
+	@JoinColumn(name="aeroport_arrivee_id")
 	private Aeroport arrivee;
 	@OneToMany(mappedBy="vol")
 	private List<Escale> escales = new ArrayList<>();
