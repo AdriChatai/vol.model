@@ -2,9 +2,15 @@ package Vol.test;
 
 import sopra.formation.Application;
 import sopra.formation.dao.IClientDao;
+<<<<<<< HEAD
 import sopra.formation.dao.IFacturationDao;
 import sopra.formation.dao.IPassagerDao;
 import sopra.formation.dao.IReservationDao;
+=======
+import sopra.vol.model.Adresse;
+import sopra.vol.model.Civilite;
+import sopra.vol.model.ClientParticulier;
+>>>>>>> master
 
 public class volTest {
 
@@ -18,6 +24,7 @@ public class volTest {
 		
 		// creation un client : 
  		
+<<<<<<< HEAD
 //				IClient clientDao = ApplicationTpVol.getInstance().getClientDao();         
 //
 //				ClientParticulier julien = new ClientParticulier("julien"," M.", "198585", "manem");
@@ -28,6 +35,18 @@ public class volTest {
 				
 
 				// creation deux reservations :
+=======
+				IClientDao clientDao = Application.getInstance().getClientDao();         
+
+				ClientParticulier julien = new ClientParticulier("manem","julien",Civilite.M);
+				
+				julien.setAdressse(new Adresse("rue de la paie", "33000", "bordeaux", "france"));
+				
+				clientDao.save(julien);
+				
+
+//				// creation deux reservations :
+>>>>>>> master
 //				
 //				IReservation reservationDao1 = ApplicationTpVol.getInstance().getReservationDao();
 //			
@@ -45,10 +64,17 @@ public class volTest {
 //				reserv2.setClient(julien);
 //				
 //				reservationDao2.create(reserv2);
+<<<<<<< HEAD
 				
 				
 		 	// creation deux factures :
 				
+=======
+//				
+//				
+//		 	// creation deux factures :
+//				
+>>>>>>> master
 //				IFacturation factureDao1 = ApplicationTpVol.getInstance().getFacturationDao();
 //				
 //				Facturation facture1 = new Facturation("virement", new Date());
@@ -65,9 +91,15 @@ public class volTest {
 //				factureDao2.create(facture2);
 //				reserv2.setFacturation(facture2);
 //				reservationDao2.update(reserv2);
+<<<<<<< HEAD
 				
 		 		// creation deux passagers :
 		 	
+=======
+//				
+//		 		// creation deux passagers :
+//		 	
+>>>>>>> master
 //				IPassager passagerDao1 = ApplicationTpVol.getInstance().getPassagerDao();
 //				
 //				
